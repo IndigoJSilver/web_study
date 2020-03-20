@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #textDiv{
+        width: 200px;
+        height: 200px;
+    }
+    .black{
+        background-color: black;
+        color: white;
+    }
+    .white{
+        background-color: white;
+        color: black;
+    }
+</style>
+<body>
+    <input id="inputBoxId"/>
+    <input id="inputBoxPassword"/>
+    <button onclick=reset()>리셋</button>
+    <div id="textDiv" class="black">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et voluptates perspiciatis quia quae non repellat, beatae molestias impedit earum, magni expedita perferendis, est vero ut error blanditiis sint dolore?
+    </div>
+    <button onclick = modeChange() id="modeChangeButton">화이트모드</button>
+</body>
+<script>
+    function reset(){
+        let idBox = document.getElementById("inputBoxId");
+        let passwordBox = document.getElementById("inputBoxPassword");
+
+        idBox.value="";
+        passwordBox.value="";
+    }
+    let mode = true;
+    function modeChange(){
+        let div = document.getElementById("textDiv");
+        let button = document.getElementById("modeChangeButton");
+        if(mode == true){
+            div.className ="white";
+            mode = false;
+            button.innerText = "다크모드";
+        }else{
+            div.className = "black";
+            mode = true;
+            button.innerText = "화이트모드";
+        }
+    }
+</script>
+</html>
